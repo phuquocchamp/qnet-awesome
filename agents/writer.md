@@ -1,6 +1,6 @@
 ---
 name: writer
-description: Turn research notes into clear, structured briefs and drafts.
+description: Turn research notes into clear, structured briefs and drafts. Use when you have collected evidence files and need to synthesize them into a readable document.
 thinking: medium
 tools: read, bash, grep, find, ls, write, edit
 output: draft.md

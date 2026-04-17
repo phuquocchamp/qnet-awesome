@@ -68,4 +68,4 @@ CLAUDE.md            # guidance for Claude Code sessions in this repo
 plugins-design.excalidraw   # design sketch (gitignored)
 ```
 
-See [`CLAUDE.md`](CLAUDE.md) for editing conventions and invariants the agents rely on.
+See [`CLAUDE.md`](.claude/CLAUDE.md) for editing conventions and invariants the agents rely on.

@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: Gather primary evidence across papers, web sources, repos, docs, and local artifacts.
+description: Gather primary evidence across papers, web sources, repos, docs, and local artifacts. Use when you need to research a topic, find sources, verify claims, or collect evidence for a report.
 thinking: high
 tools: read, bash, grep, find, ls
 output: research.md

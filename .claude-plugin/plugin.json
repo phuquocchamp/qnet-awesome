@@ -1,0 +1,9 @@
+{
+  "name": "qnet-awesome",
+  "version": "0.1.0",
+  "description": "Multi-agent research pipeline and code-explanation skill for Claude Code.",
+  "author": {
+    "name": "phuquocchamp",
+    "email": "hoangtanphuquoc@gmail.com"
+  }
+}

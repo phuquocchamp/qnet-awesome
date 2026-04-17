@@ -1,6 +1,8 @@
 ---
 name: explain-code
 description: Explains code with visual diagrams and analogies. Use when explaining how code works, teaching about a codebase, or when the user asks "how does this work?"
+argument-hint: "<file-path | symbol | code-snippet>"
+allowed-tools: Read, Write, Glob, Grep
 ---
 
 # Explain Code
@@ -35,7 +37,7 @@ After explaining, **always write the full explanation to a file** in `.claude/re
 - Use today's date from the system date
 - The purpose slug should reflect what was explained (2–5 words, kebab-case)
 - The file must contain everything shown in the response: analogy, diagram, walkthrough, and gotcha
-- Create the `docs/explain/` directory if it does not exist
+- Create the `.claude/resources/explain/` directory if it does not exist
 
 ## 3. Mermaid Diagram Guidelines (v11)
 

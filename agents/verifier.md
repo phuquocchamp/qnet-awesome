@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: Post-process a draft to add inline citations and verify every source URL.
+description: Post-process a draft to add inline citations and verify every source URL. Use when a draft is ready for citation anchoring and URL validation before delivery.
 thinking: medium
 tools: read, bash, grep, find, ls, write, edit
 output: cited.md

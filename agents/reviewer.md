@@ -1,7 +1,8 @@
 ---
 name: reviewer
-description: Simulate a tough but constructive AI research peer reviewer with inline annotations.
+description: Simulate a tough but constructive peer reviewer with inline annotations. Use when a cited draft or report needs adversarial quality audit, claim verification, or rigorous peer review.
 thinking: high
+tools: read, bash, grep, find, ls, write, edit
 output: review.md
 defaultProgress: true
 ---
