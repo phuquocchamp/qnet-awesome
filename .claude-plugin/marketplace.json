@@ -1,5 +1,5 @@
 {
-  "name": "qnet-awesome",
+  "name": "qlab",
   "owner": {
     "name": "phuquocchamp",
     "email": "hoangtanphuquoc@gmail.com"
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "qnet-awesome",
+      "name": "qengine",
       "source": "./",
       "description": "Multi-agent research pipeline and software engineering skills for Claude Code. Includes deep-research orchestration, code explanation, and four specialized subagents (researcher, writer, verifier, reviewer).",
       "version": "0.1.0",
@@ -18,10 +18,16 @@
         "name": "phuquocchamp",
         "email": "hoangtanphuquoc@gmail.com"
       },
-      "homepage": "https://github.com/phuquocchamp/qnet-awesome",
-      "repository": "https://github.com/phuquocchamp/qnet-awesome",
+      "homepage": "https://github.com/phuquocchamp/qengine",
+      "repository": "https://github.com/phuquocchamp/qengine",
       "license": "Apache-2.0",
-      "keywords": ["research", "engineering", "code-explanation", "multi-agent", "software-engineering"],
+      "keywords": [
+        "research",
+        "engineering",
+        "code-explanation",
+        "multi-agent",
+        "software-engineering"
+      ],
       "category": "productivity"
     }
   ]

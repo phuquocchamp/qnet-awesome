@@ -1,9 +1,11 @@
 ---
 name: deep-research
 description: Run a thorough, source-heavy investigation on any topic. Use when the user asks for deep research, a comprehensive analysis, an in-depth report, or a multi-source investigation. Produces a cited research brief with provenance tracking.
+
 argument-hint: "<research topic>"
 allowed-tools: WebSearch, WebFetch, Read, Write, Bash, Agent
 agent: researcher, reviewer, verifier, writer
+
 model: opus
 ---
 
@@ -30,7 +32,7 @@ Derive a short slug from the topic (lowercase, hyphens, no filler words, ≤5 wo
 All artifacts for this research run live under a single **deep-research folder** in the current project:
 
 ```
-.claude/resources/docs/deep-research/<yyyy-mm-dd>-<slug>/
+./docs/deep-research/<yyyy-mm-dd>-<slug>/
 ├── .plans/
 │   └── <slug>.md
 ├── .drafts/
@@ -44,7 +46,7 @@ All artifacts for this research run live under a single **deep-research folder**
 - **File naming convention**: all markdown deliverables (research files, final brief, provenance) use the pattern `no-<NN>-<descriptive-name>.md` where `<NN>` is a zero-padded order number and `<descriptive-name>` summarises the file's content (lowercase, hyphens, ≤5 words). Example: `no-01-web-research.md`, `no-02-paper-research.md`, `no-03-draft-brief.md`, `no-04-cited-brief.md`, `no-05-provenance.md`.
 - Internal artifacts (`.plans/`, `.drafts/`) keep their original naming (no `no-NN-` prefix).
 
-Set `RESEARCH_DIR=.claude/resources/docs/deep-research/<yyyy-mm-dd>-<slug>` and use it for all file paths in this run.
+Set `RESEARCH_DIR=./docs/deep-research/<yyyy-mm-dd>-<slug>` and use it for all file paths in this run.
 
 Write the plan to `${RESEARCH_DIR}/.plans/<slug>.md` as a self-contained artifact. Use this same slug for all artifacts in this run.
 If `CHANGELOG.md` exists, read the most recent relevant entries before finalizing the plan. Once the workflow becomes multi-round or spans enough work to merit resume support, append concise entries to `CHANGELOG.md` after meaningful progress and before stopping.
@@ -274,4 +276,4 @@ If the user wants unattended execution or the sweep will clearly take a while:
 - Launch the full workflow via `subagent` using `clarify: false, async: true`
 - Report the async ID and how to check status with `subagent_status`
 
-Output: all artifacts in `${RESEARCH_DIR}/` (`.claude/resources/docs/deep-research/<yyyy-mm-dd>-<slug>/`) with numbered files and provenance sidecar.
+Output: all artifacts in `${RESEARCH_DIR}/` (`./docs/deep-research/<yyyy-mm-dd>-<slug>/`) with numbered files and provenance sidecar.

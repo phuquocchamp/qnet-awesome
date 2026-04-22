@@ -1,4 +1,4 @@
-# qnet-awesome
+# qengine
 
 A **Claude Code plugin for software engineering** built on the harness engineering model — every component is a Markdown file with YAML frontmatter that the Claude Code harness loads at session start. No build step, no runtime, just structured prompting with strict division of labor.
 
@@ -7,15 +7,15 @@ A **Claude Code plugin for software engineering** built on the harness engineeri
 Add the marketplace and install the plugin from the GitHub repo:
 
 ```shell
-/plugin marketplace add phuquocchamp/qnet-awesome
-/plugin install qnet-awesome@qnet-awesome
+/plugin marketplace add phuquocchamp/qengine
+/plugin install qengine@qengine
 ```
 
 Or via the CLI:
 
 ```bash
-claude plugin marketplace add phuquocchamp/qnet-awesome
-claude plugin install qnet-awesome@qnet-awesome
+claude plugin marketplace add phuquocchamp/qengine
+claude plugin install qengine@qengine
 ```
 
 ## What's inside
@@ -24,21 +24,21 @@ claude plugin install qnet-awesome@qnet-awesome
 
 Skills are invoked with a slash command inside Claude Code.
 
-| Skill | Command | Purpose |
-| --- | --- | --- |
-| [`deep-research`](skills/deep-research/SKILL.md) | `/deep-research <topic>` | Multi-round source-heavy investigation. Spawns parallel researcher subagents, drafts a full report, adds inline citations, and produces a verified brief with provenance tracking. |
-| [`explain-code`](skills/explain-code/SKILL.md) | `/explain-code <file \| symbol>` | Explains code with an analogy, a Mermaid diagram, a step-by-step walkthrough, and a gotcha. Saves the explanation as a dated Markdown file. |
+| Skill                                            | Command                          | Purpose                                                                                                                                                                            |
+| ------------------------------------------------ | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`deep-research`](skills/deep-research/SKILL.md) | `/deep-research <topic>`         | Multi-round source-heavy investigation. Spawns parallel researcher subagents, drafts a full report, adds inline citations, and produces a verified brief with provenance tracking. |
+| [`explain-code`](skills/explain-code/SKILL.md)   | `/explain-code <file \| symbol>` | Explains code with an analogy, a Mermaid diagram, a step-by-step walkthrough, and a gotcha. Saves the explanation as a dated Markdown file.                                        |
 
 ### Agents
 
 Subagents used by the research pipeline. They do not invoke each other — only the `deep-research` skill orchestrates them.
 
-| Agent | Role |
-| --- | --- |
-| [`researcher`](agents/researcher.md) | Gathers primary evidence across web, papers, repos, and docs. Writes an evidence table with verifiable URLs. |
-| [`writer`](agents/writer.md) | Turns research notes into a structured draft. Preserves caveats; adds no citations. |
-| [`verifier`](agents/verifier.md) | Anchors every factual claim to a source, verifies each URL, and builds the final Sources section. |
-| [`reviewer`](agents/reviewer.md) | Acts as a skeptical peer reviewer or adversarial auditor. Produces a structured review with inline annotations. |
+| Agent                                | Role                                                                                                            |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| [`researcher`](agents/researcher.md) | Gathers primary evidence across web, papers, repos, and docs. Writes an evidence table with verifiable URLs.    |
+| [`writer`](agents/writer.md)         | Turns research notes into a structured draft. Preserves caveats; adds no citations.                             |
+| [`verifier`](agents/verifier.md)     | Anchors every factual claim to a source, verifies each URL, and builds the final Sources section.               |
+| [`reviewer`](agents/reviewer.md)     | Acts as a skeptical peer reviewer or adversarial auditor. Produces a structured review with inline annotations. |
 
 ## The research pipeline
 
@@ -60,7 +60,7 @@ flowchart LR
 All artifacts for a run live under a dated folder:
 
 ```
-.claude/resources/docs/deep-research/<yyyy-mm-dd>-<slug>/
+./docs/deep-research/<yyyy-mm-dd>-<slug>/
 ├── .plans/<slug>.md
 ├── .drafts/<slug>-draft.md
 └── no-NN-<descriptive-name>.md
