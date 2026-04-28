@@ -55,6 +55,7 @@ Pick the diagram type that best fits the concept:
 **Syntax rules (Mermaid v11):**
 
 - Use `flowchart` (not the legacy `graph` keyword)
+- Break new line: <br> instead of /n
 - Use YAML frontmatter for config — **not** the deprecated `%%{init:...}%%` directive:
 
   ````markdown
